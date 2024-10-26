@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPA Calculator</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+      <h2 class="text-2xl font-bold text-center mb-4">GPA Calculator</h2>
+      <table class="w-full mb-4">
+        <thead>
+          <tr>
+            <th class="w-1/12 text-center">Select</th>
+            <th class="w-5/12 text-center">Course</th>
+            <th class="w-3/12 text-center">Grade</th>
+            <th class="w-2/12 text-center">Credits</th>
+            <th class="w-1/12"></th>
+          </tr>
+        </thead>
+        <tbody id="coursesTable">
+          <tr class="course-row">
+            <td class="w-1/12 text-center">
+              <input type="checkbox" class="course-select" checked />
+            </td>
+            <td class="w-5/12">
+              <input
+                type="text"
+                class="course-name bg-gray-100 rounded p-2 w-full"
+              />
+            </td>
+            <td class="w-3/12">
+              <select class="grade-dropdown bg-gray-100 rounded p-2 w-full">
+                <option value="" selected>--</option>
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.3">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.3">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.3">D+</option>
+                <option value="1.0">D</option>
+                <option value="0.7">D-</option>
+                <option value="0.0">F</option>
+              </select>
+            </td>
+            <td class="w-2/12">
+              <input
+                type="number"
+                class="credits-input bg-gray-100 rounded p-2 w-full"
+                min="0"
+              />
+            </td>
+            <td class="w-1/12 text-center">
+              <button class="delete-row text-red-500">X</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button
+        id="addRowBtn"
+        class="bg-blue-500 text-white px-4 py-2 rounded mb-4 w-full"
+      >
+        Add row
+      </button>
+      <div class="flex gap-2">
+        <button
+          id="calculateBtn"
+          class="bg-green-500 text-white px-4 py-2 rounded w-full"
+        >
+          Calculate
+        </button>
+        <button
+          id="resetBtn"
+          class="bg-gray-500 text-white px-4 py-2 rounded w-full"
+        >
+          Reset
+        </button>
+      </div>
+      <div id="gpaDisplay" class="text-xl text-center mt-4">
+        GPA: <span id="gpaResult">-</span>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
